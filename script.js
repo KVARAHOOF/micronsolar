@@ -41,3 +41,17 @@ function sendToWhatsApp(event) {
         
 window.open(whatsappUrl, '_blank');
 }
+
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// ഏതെങ്കിലും ലിങ്കിൽ ക്ലിക്ക് ചെയ്താൽ മെനു ഓട്ടോമാറ്റിക് ആയി ക്ലോസ് ആകാൻ
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
