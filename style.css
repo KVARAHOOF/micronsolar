@@ -341,6 +341,54 @@ footer {
 .whatsapp-float:hover {
     transform: scale(1.1);
 }
+/* മൊബൈൽ ടോഗിൾ ബട്ടൺ ഡിസൈൻ (ആദ്യം ലാപ്ടോപ്പിൽ കാണിക്കില്ല) */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-blue);
+    transition: 0.3s;
+}
+
+/* --- മൊബൈൽ റെസ്പോൺസീവ് വ്യൂ (max-width: 768px) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* ഫോണിൽ മാത്രം ബട്ടൺ കാണിക്കും */
+    }
+
+    /* നാവിഗേഷൻ ലിങ്കുകൾ ഫോണിൽ ഡിഫോൾട്ടായി ഹൈഡ് ചെയ്തു വെക്കും */
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: -100%; /* സ്ക്രീനിന് പുറത്തേക്ക് മാറ്റി വെക്കുന്നു */
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        transition: 0.3s ease-in-out;
+    }
+
+    /* ജാവാസ്ക്രിപ്റ്റ് വഴി 'active' ക്ലാസ് വരുമ്പോൾ മെനു ഷോ ചെയ്യും */
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    header, .navbar {
+        padding: 15px 20px;
+    }
+}
 
 /* --- Responsive Media Query for Mobile Phones --- */
 @media (max-width: 768px) {
