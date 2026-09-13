@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micron Engineering Solar Plant</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.ico">
+
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for WhatsApp Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- 2. Navbar / Header -->
+    <navbar>
+        <div class="logo-container">
+            <img src="images/logo.jpeg" alt="Micron Engineering Logo" class="logo-img">
+            <span class="brand-name">MICRON <span>ENGINEERING</span></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </navbar>
+
+    <!-- 3. Home Section with Solar Background -->
+    <section id="home" class="hero">
+        <h1>Powering the Future with <span>Solar Energy</span></h1>
+        <p>Providing top-notch engineering and sustainable solar solutions for residential and commercial needs.</p>
+        <a href="#contact" class="btn">Get a Free Quote</a>
+    </section>
+
+    <!-- 4. About Us -->
+    <section id="about">
+        <h2 class="section-title">About <span>Us</span></h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Micron Engineering is a trusted leader in solar energy solutions. We are committed to delivering high-efficiency solar installations that help reduce carbon footprints and energy costs. Our expert engineers ensure seamless execution from consultation to installation and maintenance.</p>
+            </div>
+            <div class="about-img"></div>
+        </div>
+    </section>
+
+    <!-- 5. Services -->
+    <section id="services" style="background-color: #ffffff;">
+        <h2 class="section-title">Our <span>Services</span></h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Solar Panel Installation</h3>
+                <p>Customized residential and commercial solar setups engineered for maximum power output.</p>
+            </div>
+            <div class="service-card">
+                <h3>Maintenance & Cleaning</h3>
+                <p>Regular inspection, servicing, and panel cleaning to ensure peak operational performance.</p>
+            </div>
+            <div class="service-card">
+                <h3>Solar Water Heaters</h3>
+                <p>Eco-friendly and cost-effective heating systems tailored for domestic and industrial applications.</p>
+            </div>
+            <div class="service-card">
+                <h3>Engineering Consultancy</h3>
+                <p>Expert assessment and layout designs for optimized renewable energy implementation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Projects / Gallery -->
+    <section id="projects">
+        <h2 class="section-title">Our <span>Projects</span> & Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="project1.jpg" alt="Commercial Solar Installation" onclick="openLightbox('image', this.src)">
+                <div class="gallery-overlay"><h3>Commercial Solar Plant</h3></div>
+            </div>
+            <div class="gallery-item">
+                <img src="project2.jpg" alt="Residential Solar Rooftop" onclick="openLightbox('image', this.src)">
+                <div class="gallery-overlay"><h3>Residential Rooftop</h3></div>
+            </div>
+            <div class="gallery-item">
+                <img src="project3.jpg" alt="Solar Panel Setup" onclick="openLightbox('image', this.src)">
+                <div class="gallery-overlay"><h3>Industrial Setup</h3></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1509391365330-18f61582260f?auto=format&fit=crop&w=600&q=80" alt="Solar Project" onclick="openLightbox('image', this.src)">
+                <div class="gallery-overlay"><h3>Solar Array</h3></div>
+            </div>
+            <div class="gallery-item video-item" onclick="openLightbox('video', 'project-video.mp4')">
+                <div class="video-thumb-container" style="position: relative; cursor: pointer;">
+                    <img src="video-thumb.jpg" alt="Video Thumbnail" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.6); color: #fff; padding: 15px 20px; border-radius: 50%; font-size: 20px;">▶</div>
+                </div>
+                <div class="gallery-overlay"><h3>Solar Installation Video</h3></div>
+            </div>
+        </div>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox-modal" onclick="closeLightbox(event)">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <div class="lightbox-content" onclick="event.stopPropagation()">
+                <img id="lightbox-img" src="" style="display: none; max-width: 90%; max-height: 85vh;">
+                <video id="lightbox-video" src="" controls style="display: none; max-width: 90%; max-height: 85vh; width: 100%;"></video>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Contact Us -->
+    <section id="contact" style="background-color: #ffffff;">
+        <h2 class="section-title">Contact <span>Us</span></h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p><i class="fa fa-map-marker-alt"></i> Office Address, City, Country</p>
+                <p><i class="fa fa-phone"></i> +91 XXXXXXXXXX</p>
+                <p><i class="fa fa-envelope"></i> info@micronengineering.com</p>
+            </div>
+            <div class="contact-form" style="max-width: 600px; width: 100%;">
+            <h3>Send us a message on WhatsApp</h3>
+            <form id="whatsapp-form" onsubmit="sendToWhatsApp(event)">
+                <input type="text" id="wa-name" placeholder="Your Name" required>
+                <input type="email" id="wa-email" placeholder="Your Email" required>
+                <textarea id="wa-message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" style="background-color: #25d366; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <i class="fab fa-whatsapp" style="font-size: 20px;"></i> Send via WhatsApp
+                </button>
+            </form>
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Micron Engineering Solar Plant. All Rights Reserved.</p>
+    </footer>
+
+    <!-- 9. Floating WhatsApp Button -->
+    <a href="https://api.whatsapp.com/send?phone=919544053121" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+    
+</html>
